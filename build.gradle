@@ -1,0 +1,25 @@
+buildscript {
+	repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io/' }
+    }
+    dependencies {
+        classpath('com.github.Fox2Code.FoxLoader:dev:0.1.5')
+    }
+}
+
+apply plugin: 'foxloader.dev'
+
+foxloader {
+    // forceReload = true
+    modId = "examplemod"
+    modName = "Fox Loader Example Mod"
+    modVersion = "1.1.0"
+    modDesc = "An example mod for developers!!"
+    clientMod = "com.fox2code.examplemod.ExampleModClient"
+    serverMod = "com.fox2code.examplemod.ExampleModServer"
+    // Development tools don't like that both client and server define
+    // the same classes, so uncomment to disable the side inclusion.
+    // includeClient = false
+    // includeServer = false
+}
