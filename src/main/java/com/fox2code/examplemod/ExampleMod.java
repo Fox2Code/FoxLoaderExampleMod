@@ -25,7 +25,8 @@ public class ExampleMod extends Mod {
                 .setBlockMaterial(GameRegistry.BuiltInMaterial.CLOTH)
                 .setBlockStepSounds(GameRegistry.BuiltInStepSounds.CLOTH)
                 .setBlockName("rat_block").setBurnRate(30, 60).setBurnTime(300)
-                .setBlockHardness(0.8F).setTooltipColor(Color.GRAY));
+                .setBlockHardness(0.8F).setTooltipColor(Color.GRAY)
+                .setEffectiveTool(RegisteredToolType.SWORD));
         RegisteredItem coal = GameRegistry.getInstance().getRegisteredItem(263);
         RegisteredItem wool = GameRegistry.getInstance().getRegisteredItem(35);
         RegisteredItemStack grayWool = wool.newRegisteredItemStack();
