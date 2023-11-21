@@ -1,4 +1,6 @@
+*.ipr
 *.iml
+*.iws
 /.idea
 /build
 /.gradle/
@@ -8,3 +10,5 @@
 
 /.project
 /.classpath
+
+*.hprof
