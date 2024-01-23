@@ -4,7 +4,7 @@ buildscript {
         maven { url 'https://jitpack.io/' }
     }
     dependencies {
-        classpath('com.fox2code.FoxLoader:dev:1.2.35')
+        classpath('com.fox2code.FoxLoader:dev:1.2.36')
     }
 }
 
