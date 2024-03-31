@@ -1,10 +1,11 @@
 buildscript {
 	repositories {
         mavenCentral()
+        maven { url 'https://cdn.fox2code.com/maven' }
         maven { url 'https://jitpack.io/' }
     }
     dependencies {
-        classpath('com.fox2code.FoxLoader:dev:1.2.38')
+        classpath('com.fox2code.FoxLoader:dev:1.2.41')
     }
 }
 

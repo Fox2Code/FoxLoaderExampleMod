@@ -1,5 +1,6 @@
 package com.fox2code.examplemod;
 
+import com.fox2code.foxloader.config.ConfigEntry;
 import com.fox2code.foxloader.loader.Mod;
 import com.fox2code.foxloader.registry.*;
 
@@ -7,6 +8,7 @@ import java.awt.*;
 import java.util.Random;
 
 public class ExampleMod extends Mod {
+    public static final ExampleModConfig CONFIG = new ExampleModConfig();
     private static final Random random = new Random();
     private static final int[] loots = new int[]{
             280, // Stick
@@ -21,6 +23,7 @@ public class ExampleMod extends Mod {
 
     @Override
     public void onPreInit() {
+        setConfigObject(CONFIG);
         ratBlock = registerNewBlock("rat_block", new BlockBuilder()
                 .setBlockMaterial(GameRegistry.BuiltInMaterial.CLOTH)
                 .setBlockStepSounds(GameRegistry.BuiltInStepSounds.CLOTH)
@@ -38,5 +41,10 @@ public class ExampleMod extends Mod {
         if (random.nextInt(256) == 0)
             return 264; // Diamond
         return loots[random.nextInt(loots.length)];
+    }
+
+    public static class ExampleModConfig {
+        @ConfigEntry(configName = "Rat eat cheese")
+        public boolean eatCheese = true;
     }
 }

@@ -22,7 +22,8 @@ public class MixinBlockCheeseWheel extends Block {
 
     @Inject(method = "blockActivated", at = @At("HEAD"), cancellable = true)
     public void onBlockActivated(World world, int x, int y, int z, EntityPlayer player, CallbackInfoReturnable<Boolean> cir) {
-        if (world.getBlockId(x, y - 1, z) == ExampleMod.ratBlock.getRegisteredBlockId()) {
+        if (ExampleMod.CONFIG.eatCheese && !world.multiplayerWorld &&
+                world.getBlockId(x, y - 1, z) == ExampleMod.ratBlock.getRegisteredBlockId()) {
             int loot = ExampleMod.randomLootId();
             if (loot != 0) {
                 EntityItem item = new EntityItem(world, player.posX, player.posY, player.posZ, new ItemStack(loot, 1));
@@ -42,8 +43,8 @@ public class MixinBlockCheeseWheel extends Block {
 
     @Override
     public void onBlockPlaced(World world, int x, int y, int z, int blockFace) {
-        if (!world.multiplayerWorld && world.getBlockId(x, y - 1, z) ==
-                ExampleMod.ratBlock.getRegisteredBlockId()) {
+        if (ExampleMod.CONFIG.eatCheese && !world.multiplayerWorld &&
+                world.getBlockId(x, y - 1, z) == ExampleMod.ratBlock.getRegisteredBlockId()) {
            int i = world.getBlockMetadata(x, y, z);
            if (i >= 6) {
                world.setBlockWithNotify(x, y, z, 0);
