@@ -25,6 +25,7 @@ public class ExampleMod extends Mod {
     public void onPreInit() {
         setConfigObject(CONFIG);
         ratBlock = registerNewBlock("rat_block", new BlockBuilder()
+                .setItemBlock(new ItemBuilder().setWorldItemScale(0.9F))
                 .setBlockMaterial(GameRegistry.BuiltInMaterial.CLOTH)
                 .setBlockStepSounds(GameRegistry.BuiltInStepSounds.CLOTH)
                 .setBlockName("rat_block").setBurnRate(30, 60).setBurnTime(300)
