@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'https://cdn.fox2code.com/maven' }
+    }
+    dependencies {
+        classpath('com.fox2code.FoxLoader:dev:2.0-alpha7')
+    }
+}
+
+apply plugin: 'foxloader.dev'
+
+group = 'com.fox2code'
+version = '2.0.0'
+
+dependencies {
+    api 'org.semver4j:semver4j:5.3.0'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    from "LICENSE"
+}
+
+foxloader {
+    modId = "examplemod"
+    modName = "FoxLoader Example Mod"
+    modIcon = "assets/examplemod/icon.png"
+    modVersion = project.version
+    modAuthors = "Fox2Code"
+    modMain = "com.fox2code.examplemod.ExampleMod"
+    modDesc("This is an example mod for FoxLoader 2.0")
+    modDesc()
+    modDesc("You can check it's code at https://github.com/Fox2Code/FoxLoaderExampleMod")
+}
