@@ -4,7 +4,7 @@ buildscript {
         maven { url 'https://cdn.fox2code.com/maven' }
     }
     dependencies {
-        classpath('com.fox2code.FoxLoader:dev:2.0-alpha15')
+        classpath('com.fox2code.FoxLoader:dev:2.0-alpha17')
     }
 }
 
