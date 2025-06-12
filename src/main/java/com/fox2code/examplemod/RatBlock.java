@@ -1,6 +1,7 @@
 package com.fox2code.examplemod;
 
-import com.fox2code.foxloader.client.CreativeTab;
+import net.minecraft.client.gui.creative.CreativeTab;
+import net.minecraft.client.gui.creative.CreativeTabs;
 import net.minecraft.common.block.Block;
 import net.minecraft.common.block.data.Materials;
 import net.minecraft.common.block.sound.StepSounds;
@@ -21,6 +22,6 @@ public class RatBlock extends Block {
 
     @Override
     public CreativeTab getRegisterFLTab() {
-        return CreativeTab.BUILDING_BLOCKS;
+        return CreativeTabs.BUILDING_BLOCKS;
     }
 }
