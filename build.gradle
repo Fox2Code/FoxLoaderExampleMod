@@ -32,6 +32,7 @@ foxloader {
     modIcon = "assets/examplemod/icon.png"
     modVersion = project.version
     modAuthors = "Fox2Code"
+    modWebsite = "https://github.com/Fox2Code/FoxLoaderExampleMod"
     modMain = "com.fox2code.examplemod.ExampleMod"
     modDesc("This is an example mod for FoxLoader 2.0")
     modDesc()
